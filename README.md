@@ -1,5 +1,26 @@
 # SpConv: PyTorch Spatially Sparse Convolution Library
 
+Easy to install, been tested on CUDA 10/11
+
+Make no code change to the raw [SpConv](https://github.com/traveller59/spconv/)
+
+## Install on Ubuntu 16.04/18.04
+
+* if you are using pytorch 1.4+ and encounter "nvcc fatal: unknown -Wall", you need to go to torch package dir and remove flags contains "-Wall" in INTERFACE_COMPILE_OPTIONS in Caffe2Targets.cmake. This problem can't be fixed in this project (to avoid this, I need to remove all torch dependency in cuda sources and drop half support).
+
+0. Use ```git clone xxx.git --recursive``` to clone this repo.
+
+1. Install boost headers to your system include path, you can use either ```sudo apt-get install libboost-all-dev``` or download compressed files from boost official website and copy headers to include path.
+
+2. Download cmake >= 3.13.2, then add cmake executables to PATH.
+
+3. Ensure you have installed pytorch 1.0+ in your environment, run ```python setup.py bdist_wheel``` (don't use ```python setup.py install```).
+
+4. Run ```cd ./dist```, use pip to install generated whl file.
+
+
+<!-- # SpConv: PyTorch Spatially Sparse Convolution Library
+
 [![Build Status](https://github.com/traveller59/spconv/workflows/build/badge.svg)](https://github.com/traveller59/spconv/actions?query=workflow%3Abuild)
 
 This is a spatially sparse convolution library like [SparseConvNet](https://github.com/facebookresearch/SparseConvNet) but faster and easy to read. This library provide sparse convolution/transposed, submanifold convolution, inverse convolution and sparse maxpool.
@@ -159,3 +180,4 @@ This project is licensed under the Apache license 2.0 License - see the [LICENSE
 The [CUDPP](https://github.com/cudpp/cudpp) hash code is licensed under BSD License.
 
 The [robin-map](https://github.com/Tessil/robin-map) code is licensed under MIT license.
+ -->
